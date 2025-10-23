@@ -11,13 +11,11 @@ def compute_similarity_score(input_data):
     left_list, right_list = split_list(input_data)
     score = 0
     for el in left_list:
-        # find amount of elements in right_list that are equal to el
         score += int(el)*right_list.count(el)
     return score
 
 if __name__ == "__main__":
 
-    # get input file:
     with open('./inputs/1.txt', 'r') as f:
         input_data = f.read().strip().split('\n')
 
