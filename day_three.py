@@ -17,6 +17,7 @@ def extract_mul_expressions(input_string):
     for i in range(len(input_string) - 4):
         if input_string[i : i + 4] == "mul(":
             # find the closing parenthesis
+            closing_index = -1
             for j in range(i + 4, len(input_string)):
                 if input_string[j] == ")":
                     closing_index = j
