@@ -2,8 +2,6 @@
 Advent of code 2024 - Day 2 Part 1
 """
 
-import numpy as np
-
 
 def split_levels_in_reports(input_data):
     reports = [level.split(" ") for level in input_data]
@@ -11,7 +9,9 @@ def split_levels_in_reports(input_data):
 
 
 def test_monotone(level_int):
-    return level_int == sorted(level_int) or level_int == sorted(level_int, reverse=True)
+    return level_int == sorted(level_int) or level_int == sorted(
+        level_int, reverse=True
+    )
 
 
 def adjacent_differs_at_least_one(level_int):
@@ -45,14 +45,7 @@ dummy_data = [
     "1 3 6 7 9",
 ]
 
-dummy_answers = [
-    True,
-    False,
-    False,
-    False,
-    False,
-    True
-]
+dummy_answers = [True, False, False, False, False, True]
 
 if __name__ == "__main__":
     # get input file:
@@ -60,7 +53,7 @@ if __name__ == "__main__":
         input_data = f.read().strip().split("\n")
 
     reports_dummy = split_levels_in_reports(dummy_data)
-    
+
     for level, answer in zip(reports_dummy, dummy_answers):
         level_int = [int(i) for i in level]
         assert test_safety(level_int) == answer
